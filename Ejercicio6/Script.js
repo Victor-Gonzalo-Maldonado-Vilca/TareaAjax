@@ -38,6 +38,24 @@ document.getElementById("comparasion").addEventListener("submit", function (even
         };
       });
 
+      // Crear el gráfico con los datos de todas las regiones
+      const ctx = document.getElementById('grafica').getContext('2d');
+      myChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: fechas,
+          datasets: datasets
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          scales: {
+            y: {
+              beginAtZero: true
+            }
+          }
+        }
+      });
     })
     .catch(error => console.error('Error:', error));
 });
