@@ -20,6 +20,15 @@ import('node-fetch').then(async (module) => {
     //Ordenar arreglo
     arreglo.sort((a, b) => b[1] - a[1]);
     let ordenamiento = new Map(arreglo);
+    let i = 0;
+    //Imprimir datos del mapa
+    for (let [clave, valor] of ordenamiento) {
+      console.log((i + 1) + " " + clave + ": " + valor);
+      i++;
+      if(i >= 10){
+        break;
+      }
+    }
   } else {
     console.error('Error en la solicitud:', response.status);
   }
