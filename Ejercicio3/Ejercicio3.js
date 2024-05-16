@@ -15,6 +15,11 @@ import('node-fetch').then(async (module) => {
       }
       mapa.set(region,suma);
     }
+    //convertir mapa en arreglo
+    let arreglo = Array.from(mapa);
+    //Ordenar arreglo
+    arreglo.sort((a, b) => b[1] - a[1]);
+    let ordenamiento = new Map(arreglo);
   } else {
     console.error('Error en la solicitud:', response.status);
   }
