@@ -41,7 +41,3 @@ app.post('/crear', (request, response) => {
     }
   });
 });
-app.get('/listar', (request, response) => {
-    response.setHeader('Content-Type', 'application/json');
-    response.end(JSON.stringify(archivosGuardados.map(archivo => archivo.nombre)));
-});
